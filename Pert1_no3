@@ -1,0 +1,57 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class soal1 {
+    static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        ArrayList<String> rekap = new ArrayList<>();
+        char ulang;
+
+        do {
+            System.out.print("Masukkan Nama: ");
+            String nama = input.nextLine();
+            System.out.print("Masukkan NPM: ");
+            String npm = input.nextLine();
+            System.out.print("Masukkan Nilai UTS: ");
+            float uts = input.nextFloat();
+            System.out.print("Masukkan Nilai UAS: ");
+            float uas = input.nextFloat();
+
+            float rata = hitungRata(uts, uas);
+            String status = cekLulus(rata);
+
+            rekap.add(nama + " (" + npm + ") - Rata-rata: " + rata + " [" + status + "]");
+
+            tampilData(nama, npm, uts, uas, rata, status);
+
+            System.out.print("Apakah ingin mengulang? (y/n) ");
+            ulang = input.next().charAt(0);
+            input.nextLine();
+
+        } while (ulang != 'n' && ulang != 'N');
+
+        System.out.println("\nTERIMAKASIH!");
+        System.out.println("Data yang tersimpan:");
+        for (String s : rekap) {
+            System.out.println(s);
+        }
+    }
+
+    public static float hitungRata(float uts, float uas) {
+        return (uts + uas) / 2;
+    }
+
+    public static String cekLulus(float rata) {
+        return (rata >= 70) ? "Lulus" : "Tidak Lulus";
+    }
+
+    public static void tampilData(String n, String npm, float uts, float uas, float r, String s) {
+        System.out.println("===============================");
+        System.out.println("Nama: " + n);
+        System.out.println("NPM: " + npm);
+        System.out.println("Rata-rata: " + r);
+        System.out.println("Status: " + s);
+        System.out.println("===============================");
+    }
+}
