@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class soal1 {
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in); 
+        
+        while(true){
+            System.out.print("Masukkan Nama: ");
+            String nama = input.nextLine();
+            
+            System.out.print("Masukkan NPM: ");
+            String npm = input.nextLine();
+            
+            System.out.print("Masukkan Nilai UTS: ");
+            float uts = input.nextFloat();
+            
+            System.out.print("Masukkan Nilai UAS: ");
+            float uas = input.nextFloat();
+
+            float rataRata = (uts + uas) / 2;
+            String status = (rataRata >= 70) ? "Lulus" : "Tidak Lulus";
+            
+            System.out.println("===============================");
+            System.out.println("Nama Kamu: " + nama);
+            System.out.println("NPM Kamu: " + npm);
+            System.out.println("Nilai UTS Kamu: " + uts);
+            System.out.println("Nilai UAS Kamu: " + uas);
+            System.out.printf("Nilai Rata-Rata kamu: %.1f \n", rataRata);
+            System.out.println("Status Kamu: " + status);
+            
+            System.out.print("Apakah ingin mengulang? (y/n) ");
+            char ulang = input.next().charAt(0);
+            
+            input.nextLine(); 
+            
+            if(ulang == 'n' || ulang == 'N'){
+                System.out.println("Terimakasih!");
+                break;
+            }
+        }
+        input.close();
+    }
+}
