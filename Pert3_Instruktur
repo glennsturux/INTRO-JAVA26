@@ -1,0 +1,4 @@
+//Jika Ada error biasanya version java nya coba pakai// Javac --release 8 namafile.java
+// Untuk nomor 1 dan 2 Jalan nya, Java Soal1 4 2
+// Untuk Nomor 3 buat File nama_npm.txt lalu isi File dengan kata kata Seperti "Halo Saya ... Dengan Npm ..."
+//Untuk Nomor 4 Coba hapus isi file txt lalu jalankan lagi
